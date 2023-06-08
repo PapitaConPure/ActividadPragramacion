@@ -1,2 +1,0 @@
-# ActividadPragamacion
-actividad mini-parcial
