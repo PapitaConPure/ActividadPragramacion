@@ -1,8 +1,0 @@
-C:\Users\TUP^\Desktop\Iván\ActividadPragramacion\DIOS\bin\Debug\DIOS.exe.config
-C:\Users\TUP^\Desktop\Iván\ActividadPragramacion\DIOS\bin\Debug\DIOS.exe
-C:\Users\TUP^\Desktop\Iván\ActividadPragramacion\DIOS\bin\Debug\DIOS.pdb
-C:\Users\TUP^\Desktop\Iván\ActividadPragramacion\DIOS\obj\Debug\DIOS.csproj.AssemblyReference.cache
-C:\Users\TUP^\Desktop\Iván\ActividadPragramacion\DIOS\obj\Debug\DIOS.csproj.SuggestedBindingRedirects.cache
-C:\Users\TUP^\Desktop\Iván\ActividadPragramacion\DIOS\obj\Debug\DIOS.csproj.CoreCompileInputs.cache
-C:\Users\TUP^\Desktop\Iván\ActividadPragramacion\DIOS\obj\Debug\DIOS.exe
-C:\Users\TUP^\Desktop\Iván\ActividadPragramacion\DIOS\obj\Debug\DIOS.pdb
