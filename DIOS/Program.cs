@@ -1,7 +1,8 @@
 ﻿using System;
+using Papita.ConsoFacil;
 
 namespace DIOS {
-    internal class Program {
+	internal class Program {
         static Promedio promedio;
 
         static void Main(string[] args) {
@@ -9,10 +10,8 @@ namespace DIOS {
             bool seguir = true;
 
             do {
-                Console.Clear();
                 MostrarMenu();
-                char op = char.ToLower(Console.ReadKey().KeyChar);
-                Console.Clear();
+                char op = ConsoFacil.LeerOpcion();
 
                 switch (op) {
                 case '1':
@@ -29,30 +28,41 @@ namespace DIOS {
                 }
             } while (seguir);
 
-            Console.WriteLine("Chau, papá");
-            Console.ReadKey();
+			ConsoFacil.FinalizarPrograma();
         }
 
         static void AgregarValores() {
-            Console.WriteLine("Valorcito ó 0 para cortar");
-            int num = Convert.ToInt32(Console.ReadLine());
+			Console.Clear();
+			Console.CursorTop = 1;
+			Console.CursorLeft = 3;
+			ConsoFacil.MostrarPlacaSimple("Ingreso de valores", ConsoleColor.White, ConsoleColor.DarkRed);
+            ConsoFacil.MostrarLineaColoreada("Valorcito ó 0 para cortar", ConsoleColor.Cyan);
+			Console.CursorTop++;
+
+			int cantLocal = 1;
+			int num = ConsoFacil.PedirYSeguirInt32(string.Format("Número {0}", cantLocal), ConsoleColor.DarkYellow);
             while(num != 0) {
-                promedio.AgregarValor(num);
-                num = Convert.ToInt32(Console.ReadLine());
-            }
+				cantLocal++;
+				promedio.AgregarValor(num);
+                num = ConsoFacil.PedirYSeguirInt32(string.Format("Número {0}", cantLocal), ConsoleColor.DarkYellow);
+			}
         }
 
         static void MostrarPromedio() {
-            double prom = promedio.CalcularPromedio();
-            Console.WriteLine("Promedio: {0}", prom);
-            Console.ReadKey();
+			Console.Clear();
+			double prom = promedio.CalcularPromedio();
+			ConsoFacil.MostrarPlacaDoble("Promedio", Convert.ToString(prom), ConsoleColor.DarkCyan);
+			ConsoFacil.PausarPrograma();
         }
 
         static void MostrarMenu() {
-            Console.WriteLine("Cómase un nabo porfa");
-            Console.WriteLine("1. Agregar valores");
-            Console.WriteLine("2. Mostrar promedio");
-            Console.WriteLine("X. Salir");
+			Console.Clear();
+			Console.CursorTop = 1;
+			Console.CursorLeft = 3;
+			ConsoFacil.MostrarPlacaSimple("Seleccione una opción", ConsoleColor.White, ConsoleColor.Magenta);
+			ConsoFacil.MostrarPlacaDoble("1", "Agregar valores   ", ConsoleColor.DarkGreen);
+			ConsoFacil.MostrarPlacaDoble("2", "Mostrar promedio  ", ConsoleColor.Blue);
+			ConsoFacil.MostrarPlacaDoble("X", "Salir             ", ConsoleColor.Red);
         }
     }
 }
