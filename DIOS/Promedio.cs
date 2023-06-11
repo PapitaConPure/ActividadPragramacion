@@ -38,7 +38,9 @@ namespace DIOS {
 			this.EscalarArreglo();
 		}
 
-		public double CalcularPromedio() {
+		//Como la clase se llama Promedio, es medio redundante que el método se llame "CalcularPromedio"
+		//"Promedio.Calcular()"
+		public double Calcular() {
 			if(this.cantidadValores == 0)
 				return 0;
 
@@ -46,7 +48,7 @@ namespace DIOS {
 		}
 
 		public int[] ValoresSuperiores() {
-			double promedio = this.CalcularPromedio();
+			double promedio = this.Calcular();
 			int[] filtrado = new int[this.cantidadValores];
 			int cantidadFiltrada = 0;
 
