@@ -1,12 +1,12 @@
 ﻿using System;
 
 namespace DIOS {
-    class Promedio {
-        int[] valores;
+	class Promedio {
+		int[] valores;
 		int cantidadValores;
 
-        public Promedio() { 
-            this.valores = new int[2];
+		public Promedio() {
+			this.valores = new int[2];
 			this.cantidadValores = 0;
 		}
 
@@ -22,6 +22,16 @@ namespace DIOS {
 			}
 		}
 
+		public int CantidadValores {
+			get {
+				return cantidadValores;
+			}
+		}
+
+		public int Valor(int i) {
+			return this.valores[i];
+		}
+
 		public void AgregarValor(int num) {
 			this.valores[this.cantidadValores] = num;
 			this.cantidadValores++;
@@ -29,11 +39,11 @@ namespace DIOS {
 		}
 
 		public double CalcularPromedio() {
-            if(this.cantidadValores == 0)
-                return 0;
+			if(this.cantidadValores == 0)
+				return 0;
 
 			return Convert.ToDouble(this.Acumulado) / this.cantidadValores;
-        }
+		}
 
 		public int[] ValoresSuperiores() {
 			double promedio = this.CalcularPromedio();
