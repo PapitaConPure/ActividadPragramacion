@@ -35,6 +35,33 @@ namespace DIOS {
 			return Convert.ToDouble(this.Acumulado) / this.cantidadValores;
         }
 
+		public int[] ValoresSuperiores() {
+			double promedio = this.CalcularPromedio();
+			int[] filtrado = new int[this.cantidadValores];
+			int cantidadFiltrada = 0;
+
+			#region Filtrar valores
+			int i = 0;
+			while(i < this.cantidadValores) {
+				if(this.valores[i] > promedio) {
+					filtrado[cantidadFiltrada] = this.valores[i];
+					cantidadFiltrada++;
+				}
+
+				i++;
+			}
+			#endregion
+
+			#region Copiar en arreglo con tamaño acorde a lo filtrado
+			int[] reescalado = new int[cantidadFiltrada];
+
+			for(i = 0; i < cantidadFiltrada; i++)
+				reescalado[i] = filtrado[i];
+			#endregion
+
+			return reescalado;
+		}
+
 		private void EscalarArreglo() {
 			int nuevoLargo = this.valores.Length;
 
